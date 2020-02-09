@@ -7,9 +7,30 @@
 
 import React from "react"
 import PropTypes from "prop-types"
+import Profile from "./profile"
+import { Link } from "gatsby"
 
 const Layout = ({ children }) => {
-  return <main>{children}</main>
+  return (
+    <>
+      <aside>
+        <Profile />
+        <ul>
+          <li>
+            <Link to="/about" activeStyle={{ color: "red" }}>
+              About
+            </Link>
+          </li>
+          <li>
+            <Link to="/" activeStyle={{ color: "red" }}>
+              Home
+            </Link>
+          </li>
+        </ul>
+      </aside>
+      <main>{children}</main>
+    </>
+  )
 }
 
 Layout.propTypes = {
